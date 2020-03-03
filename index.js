@@ -8,13 +8,11 @@ const isSTR = str => typeof str === "string";
 const Notify = base =>
   class extends base {
     connectedCallback() {
-      super.connectedCallback();
+      if (super.connectedCallback) super.connectedCallback();
       const originalUpdated = this.updated;
+      const props = this.constructor.properties;
       this.updated = changedProperties => {
-        if (isFN(originalUpdated)) {
-          originalUpdated(changedProperties);
-        }
-        const props = this.constructor.properties;
+        if (isFN(originalUpdated)) originalUpdated(changedProperties);
         changedProperties.forEach((val, key) => {
           const changeCallback =
             props && props[key] && props[key].changeCallback;
@@ -23,7 +21,7 @@ const Notify = base =>
               ? changeCallback
               : `__${key}Changed`;
           if (isFN(this[callbackName])) {
-            this[callbackName](this[key], val);
+            this[callbackName](this[key], val, key);
           }
         });
       };

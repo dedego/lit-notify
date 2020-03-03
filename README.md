@@ -17,6 +17,9 @@ class AppComponents extends Notify(LitElement) {
                 type: Number,
                 changeCallback: 'timestampChanged'
             },
+            reset: {
+                type: 
+            }
             difference: Number
         }
     }
@@ -31,10 +34,10 @@ class AppComponents extends Notify(LitElement) {
             console.log('timestamp has changed');
         }
     }
-    timestampChanged(next, prev) {
+    timestampChanged(next, prev, key) {
         this.difference = prev ? next-prev : 0;
     }
-    __timestampChanged(next, prev) {
+    __timestampChanged(next, prev, key) {
         // If you do not specify a callback in the properties
         // this will be the default method name that is being used.
         // If the method is not defined, it will not be called.
@@ -51,3 +54,11 @@ method will be used like `__<propertyName>Changed`, in our example its **__times
 
 If you want to implement the updated method in your component class, you can still do so. 
 Lit-Notify is only extending behaviour, not overriding your implementation.
+
+## Changelog
+
+| Version | Change description |
+| ------- | ------------------ |
+| 1.0.0   | Initial verison    |
+| 1.0.1   | Added repository details |
+| 1.1.0   | Improved performance and added key as last param for debugging purposes |
