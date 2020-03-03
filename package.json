@@ -1,0 +1,15 @@
+{
+  "name": "lit-notify",
+  "version": "1.0.0",
+  "description": "A decorator class to make listening to changes easy",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dennis de Goede",
+  "license": "ISC"
+}
