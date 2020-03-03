@@ -1,6 +1,6 @@
 {
   "name": "lit-notify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A decorator class to make listening to changes easy",
   "main": "index.js",
   "files": [
@@ -11,5 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dennis de Goede",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dedego/lit-notify/issues"
+  },
+  "homepage": "https://github.com/dedego/lit-notify#readme"
 }
